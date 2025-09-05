@@ -2,7 +2,7 @@
 only for
 https://roadmap.sh/projects/single-page-cv
 
-#Teachnolgy use
+# Teachnolgy use
 VS code
 HTML
 Github
