@@ -1,0 +1,314 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* navbar section start here */
+.navbar {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    gap: 25px;
+    height: 80px;
+}
+
+.nav_iteams {
+    list-style-type: none;
+    position: relative;
+    left: 290px;
+    top: 10px;
+    display: flex;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 23px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;
+}
+
+header>img {
+    position: absolute;
+    left: 60px;
+    top: 10px;
+    width: 200px;
+}
+
+nav>svg {
+    position: relative;
+    left: 340px;
+    top: 10px;
+    width: 20px;
+}
+
+.translate {
+    position: relative;
+    width: 25px;
+    height: 25px;
+    left: 250px;
+    top: 13px;
+}
+
+
+.nav_iteams:hover {
+    color: rgb(88, 78, 78);
+    cursor: pointer;
+    transition: 0.6s;
+}
+
+svg:hover {
+    cursor: pointer;
+    transition: 0.6s;
+}
+
+/* navbar section end here */
+
+/* main section start here */
+
+/* main upersection start here */
+main {
+    position: relative;
+    top: 45px;
+    left: 0px;
+    width: 100%;
+    height: 100vh;
+}
+
+.upersection h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 62px;
+    color: rgb(34, 34, 34);
+    position: relative;
+    left: -105px;
+    gap: 15px;
+}
+
+h1>strong {
+    font-weight: 700;
+}
+
+.upersection img {
+    display: flex;
+    position: relative;
+    left: 948px;
+    top: -45px;
+}
+
+.upersection h3 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 24px;
+    line-height: 31px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 216px;
+    position: relative;
+    left: -15px;
+}
+
+.upersection>button {
+    background-color: #00b6d1;
+    width: 359px;
+    height: 59px;
+    color: white;
+    border-radius: 5px;
+    position: relative;
+    left: 450px;
+    top: 31px;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.upersection>button:hover {
+    background-color: #00a0b1;
+    cursor: pointer;
+    transition: 0.6s;
+}
+
+/* main upersection end here */
+
+/* main download setion start here */
+.download_section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.download_section>img {
+    position: relative;
+    width: 55px;
+    height: 55px;
+    left: -230px;
+    top: 60px;
+}
+
+.download_section>h3 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 24px;
+    line-height: 31px;
+    font-weight: 500;
+    position: relative;
+    left: -200px;
+    top: 60px;
+}
+
+.download_section>h3>small {
+    font-weight: 400;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    line-height: 31px;
+}
+
+.dow_sub_section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    position: relative;
+    top: 137px;
+    left: 166px;
+    width: 865px;
+    height: 600px;
+    gap: 10px;
+    justify-items: center;
+}
+
+.down {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 26px;
+    background-color: #f9f9f9;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.written {
+    position: relative;
+    left: 93px;
+    top: 10px;
+}
+
+.dow_but {
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    position: relative;
+    left: 66px;
+    top: 20px;
+    height: 33px;
+    width: 138px;
+}
+
+.hash {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 10px;
+    line-height: 16px;
+    font-weight: 500;
+    position: relative;
+    top: 30px;
+    left: 108px;
+}
+
+.actual_hash {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 8px;
+    font-weight: 500;
+    line-height: 16px;
+    position: relative;
+    top: 34px;
+}
+
+/* main download section end here */
+
+/* News letter section start here */
+.news_letter {
+    background-color: #000000d4;
+    width: 100%;
+    height: 1000px;
+    position: relative;
+    top: 200px;
+    color: white;
+    display: flex;
+}
+
+.subscribe_email {
+    position: relative;
+    left: 848px;
+    top: 79px;
+    width: 402px;
+    height: 229px;
+    border-radius: 7px;
+    border: white 1px solid;
+    background-color: white;
+    font-size: 20px;
+}
+
+.subscribe_email>h3 {
+    color: #00b6d1;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 31px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+    left: 77px;
+    top: 20px;
+}
+
+.subscribe_email>small {
+    position: relative;
+    font-size: 16px;
+    font-weight: 400;
+    left: 137px;
+    top: 30px;
+}
+
+.subscribe_email>input {
+    position: relative;
+    top: 72px;
+    left: -38px;
+    height: 44px;
+    width: 212px;
+    border: 1px solid rgba(51, 51, 51, .16);
+    border-radius: 7px;
+}
+
+.subscribe_email>button {
+    position: relative;
+    width: 212px;
+    height: 44px;
+    top: 87px;
+    left: 96px;
+    border: none;
+    border-radius: 7px;
+    background-color: #00b6d1;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.subscribe_email>button:hover {
+    cursor: pointer;
+    transition: 0.6s;
+}
+
+.text {
+    color: white;
+    position: relative;
+    left: -336px;
+    top: 165px;
+}
+
+.text > p {
+    margin: 7px;
+    height: 15px;
+    width: 404px;
+}

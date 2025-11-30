@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Funnel+Display:wght@300..800&family=Martel+Sans:wght@200;300;400;600;700;800;900&family=Mozilla+Text:wght@200..700&family=Permanent+Marker&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    background-color: rgb(0, 0, 0);
+    ;
+    color: white;
+}
+
+.left {
+    width: 25vw;
+    border: 2px solid black;
+    padding: 5px;
+}
+
+.right {
+    width: 80vw;
+    border: 2px solid black;
+    margin: 10px 0px;
+    position: relative;
+}
+
+.home ul li {
+    width: 25px;
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    padding-top: 15px;
+    font-weight: bold;
+}
+
+.heading {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    padding-top: 15px;
+    padding: 20px 15px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.heading img {
+    width: 27px;
+}
+
+.footer {
+    display: flex;
+    font-size: 10px;
+    gap: 5px;
+    position: absolute;
+    bottom: 0;
+    padding: 12px 0px;
+}
+
+.footer a {
+    list-style: none;
+    color: grey;
+}
+
+.library {
+    min-height: 80vh;
+    position: relative;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #4440406b;
+    border-top-left-radius: 10px;
+}
+
+.header>* {
+    padding: 10px;
+}
+
+.SpotifyPlaylist>h1 {
+    padding: 10px;
+}
+
+.CardContainer {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 10px;
+    max-height: 70vh;
+    overflow-y: scroll;
+}
+
+.card {
+    width: 225px;
+    padding: 10px;
+    background-color: #4440406b;
+    border-radius: 5px;
+    position: relative;
+}
+
+.card img {
+    width: 100%;
+    object-fit: contain;
+    border-radius: 5px;
+}
+
+.playButton {
+    width: 40px;
+    position: absolute;
+    top: 180px;
+    left: 180px;
+    opacity: 0;
+    transition: all 1s cubic-bezier(0.35, -0.11, 0.58, 1);
+}
+
+.button>* {
+    margin: 0px 10px;
+    font-size: 15px;
+}
+
+.signupbtn {
+    background-color: #4440406b;
+    color: rgb(167, 160, 160);
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.signupbtn:hover {
+    font-size: 0.9rem;
+    color: white;
+}
+
+.loginbtn {
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    border-radius: 100px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 15px;
+    width: 80px;
+    padding: 10px;
+}
+
+.loginbtn:hover {
+    font-size: 16px;
+}
+
+.SpotifyPlaylist{
+    
+}
+
+.playbar{
+    position: absolute;
+    bottom: 0;
+    background-color: rgb(31, 54, 31);
+    width: 98%;
+    padding: 10px;
+}
+
+.Songbutton{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+
+.Songlist ul{
+    padding: 0 10px
+}
+
+.Songlist ul li{
+    list-style: none;
+    padding: 5px 5px;
+}
