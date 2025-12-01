@@ -1,5 +1,5 @@
 import express from 'express'
-import {addStudent} from '../controller/controller.js'
+import {addStudent, viewStudent, ByMongoose} from '../controller/controller.js'
 const router = express.Router()
 
 
@@ -9,5 +9,7 @@ router.get('/', (req, res)=>{
 })
 
 router.post('/add', addStudent)
+router.get('/get/class/:Classid', viewStudent)
+router.get('/get/mongoose/:Mongooseid', ByMongoose)
 
 export default router
