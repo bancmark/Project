@@ -52,3 +52,16 @@ export const update = async (req, res)=>{
         res.send(err)
     }
 }
+
+export const removeTask = async (req, res)=>{
+    try{
+        const Uid = req.params.id // taken user id
+        let filter = (Uid.length === 24 && /^[a-fA-F0-9]+$/.test(Uid)) ?{_id: Uid}:{id: Uid}
+        const deleter = await schema.findOneAndDelete(filter)
+        res.send(deleter)
+        console.log("Data is deleted sucessefuly");
+    }
+    catch(err){
+        res.send(err)
+    }
+}
