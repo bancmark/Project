@@ -1,5 +1,5 @@
 import express from 'express'
-import {taskAdd, see} from '../controller/controller.js'
+import {taskAdd, see, update} from '../controller/controller.js'
 
 const router = express.Router()
 
@@ -9,5 +9,6 @@ router.get('/', (req, res)=>{
 
 router.post('/add', taskAdd)
 router.get('/see/:id', see)
+router.put('/update/:id', update)
 
 export default router
