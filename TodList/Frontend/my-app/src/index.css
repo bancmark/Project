@@ -5,6 +5,10 @@ body{
   padding: 0;
 }
 
+.inputt{
+  @apply bg-transparent border-b-2 flex-1 border-[#242424] w-1/4 text-white placeholder-white focus:outline-none
+}
+
 /* :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
