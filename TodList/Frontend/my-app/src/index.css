@@ -9,6 +9,10 @@ body{
   @apply bg-transparent border-b-2 flex-1 border-[#242424] w-1/4 text-white placeholder-white focus:outline-none
 }
 
+.commonDiv{
+  @apply bg-[#6e6868] my-3 mx-3 px-2 py-2 rounded-md justify-center
+}
+
 /* :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
