@@ -20,10 +20,11 @@ app.get('/', (req, res) => {
     res.send("welcome back")
 })
 
-app.post('/add', async (req, res)=>{
+app.post('/add', async (req, res) => {
     try {
-        const {website, username, password} = req.body
+        const { id, website, username, password } = req.body
         const adder = new USchema({
+            id,
             website,
             username,
             password
@@ -36,8 +37,34 @@ app.post('/add', async (req, res)=>{
     }
 })
 
-app.post('/update', (req, res)=>{
-    res.send("you got update")
+app.post('/update', async (req, res) => {
+    try {
+        const { id, ...updated } = req.body
+        const finder = await USchema.findOneAndUpdate(
+            { id: id },
+            { $set: updated },
+            { new: true }
+        )
+        if (!finder) {
+            return res.status(404).json({ message: "Data not found" });
+        }
+        res.json(finder)
+    } catch (error) {
+        res.json(error)
+    }
+})
+
+app.delete("/delete", async (req, res) => {
+    try {
+        const { id } = req.body
+        const deleter = await USchema.findOneAndDelete({ id: id })
+        if (!deleter) {
+            return res.status(404).json({ message: "Data not found" });
+        }
+        res.json({ message: "Deleted successfully" });
+    } catch (error) {
+        res.json(error)
+    }
 })
 
 app.listen(port, () => {
