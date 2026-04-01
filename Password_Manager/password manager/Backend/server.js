@@ -31,7 +31,9 @@ app.post('/add', async (req, res) => {
         })
         await adder.save()
         console.log("Data added");
-        res.send("everything is OK!")
+        res.json({
+            message: "Data received successfully"
+        })
     } catch (error) {
         res.send(error)
     }

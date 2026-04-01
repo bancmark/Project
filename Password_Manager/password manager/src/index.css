@@ -4,6 +4,14 @@
   @apply hover:text-violet-500 cursor-pointer hover:scale-110 duration-200 transition-all
 }
 
+/* .input_1{
+  @apply text-white border border-white w-full rounded-md p-3 z-30
+}
+
+.input_2{
+  @apply text-white w-1/2 m-4 p-3 border z-30 border-white rounded-md
+} */
+
 /* :root {
   --text: #6b6375;
   --text-h: #08060d;
