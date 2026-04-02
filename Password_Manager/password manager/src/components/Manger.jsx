@@ -1,6 +1,8 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import axios from "axios"
+import { v4 as uuidv4 } from 'uuid';
+
 
 const Manger = () => {
     const [website, setWebsite] = useState("")
@@ -10,6 +12,7 @@ const Manger = () => {
     const save = async () => {
         try {
             const res = await axios.post('http://localhost:3000/add', {
+                id: uuidv4(),
                 website,
                 username,
                 password
