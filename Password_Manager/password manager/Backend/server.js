@@ -20,6 +20,24 @@ app.get('/', (req, res) => {
     res.send("welcome back")
 })
 
+//sending all the data t frontend that save in server
+app.get('/get', async (req, res) => {
+    try {
+        const data = await USchema.find()
+        res.json({
+            success: true,
+            data: data
+        })
+    } catch (error) {
+        console.log(error);
+        res.json({
+            success: false,
+            message: "Error fetching data"
+        })
+    }
+})
+
+//adding all the data into server, that come from frontend
 app.post('/add', async (req, res) => {
     try {
         const { id, website, username, password } = req.body

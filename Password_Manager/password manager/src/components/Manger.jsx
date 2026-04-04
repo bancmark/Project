@@ -8,7 +8,27 @@ const Manger = () => {
     const [website, setWebsite] = useState("")
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
+    const [passarray, setPassarray] = useState([])
 
+    useEffect(() => {
+        getdata()
+    }, [])
+
+    const getdata = async () => {
+        try {
+            const res = await axios.get("http://localhost:3000/get")
+            if (res?.data?.data) {
+                setPassarray(res.data.data)
+            }
+            else {
+                console.log("Unexpected response:", res);
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    //saving all data into server by sending them into backend
     const save = async () => {
         try {
             const res = await axios.post('http://localhost:3000/add', {
@@ -18,14 +38,20 @@ const Manger = () => {
                 password
             })
             console.log(res.data)
+            // earsing old input value
+            setPassword("")
+            setUsername("")
+            setWebsite("")
+
             alert(res.data.message)
+            getdata()
         } catch (error) {
             console.log(error)
         }
     }
 
     return (
-        <div className='mt-28'>
+        <div className='mt-10'>
             <div className='bg-white/10 backdrop-blur-lg border-b border-white/20 m-4 rounded-2xl'>
                 <div className='p-4'>
                     <input
@@ -54,12 +80,30 @@ const Manger = () => {
                 </div>
                 <div className="flex justify-center mt-4 mb-4">
                     <button
-                        className="bg-green-500 w-32 h-10 rounded-lg flex items-center justify-center text-white cursor-pointer hover:bg-green-600 hover:scale-105 transition-all duration-200"
+                        className="bg-green-500 font-bold w-32 h-10 rounded-lg flex items-center justify-center text-white cursor-pointer hover:bg-green-600 hover:scale-105 transition-all duration-200"
                         onClick={save}
                     >
-                        + Save This!
+                        + Save This
                     </button>
                 </div>
+            </div>
+            <div className='bg-white/10 backdrop-blur-lg border-b border-white/20 m-4 rounded-2xl p-4'>
+                <div className='grid grid-cols-5 text-white items-center mb-6 blurr py-3'>
+                    <h2 className='col-span-2 px-3'>website</h2>
+                    <h2 className='col-span-1'>Username</h2>
+                    <h2 className='col-span-1'>Password</h2>
+                    <h2 className='col-span-1'>Actions</h2>
+                </div>
+                {passarray.map((item) => (
+                    <div key={item.id} className='-z-50 text-white grid grid-cols-5'>
+                        <p className='col-span-2 my-3 truncate px-3'>{item.website}</p>
+                        <p className='col-span-1 my-3'>{item.username}</p>
+                        <p className='col-span-1 my-3'>{item.password}</p>
+                        <div className='col-span-1'>
+
+                        </div>
+                    </div>
+                ))}
             </div>
         </div>
     )

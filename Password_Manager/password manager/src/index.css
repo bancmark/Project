@@ -4,6 +4,10 @@
   @apply hover:text-violet-500 cursor-pointer hover:scale-110 duration-200 transition-all
 }
 
+.blurr{
+  @apply bg-white/10 backdrop-blur-md border border-white/20 rounded-xl
+}
+
 /* .input_1{
   @apply text-white border border-white w-full rounded-md p-3 z-30
 }
