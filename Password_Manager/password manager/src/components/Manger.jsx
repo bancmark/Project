@@ -2,6 +2,9 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import axios from "axios"
 import { v4 as uuidv4 } from 'uuid';
+import bin from "../assets/bin.png";
+import save from '../assets/bookmark_ani.gif';
+import edit from "../assets/pen.png"
 
 
 const Manger = () => {
@@ -10,6 +13,7 @@ const Manger = () => {
     const [password, setPassword] = useState("")
     const [passarray, setPassarray] = useState([])
 
+    // getting all the data when website load
     useEffect(() => {
         getdata()
     }, [])
@@ -50,6 +54,20 @@ const Manger = () => {
         }
     }
 
+    const Delete = async (id)=>{
+        try {
+            const res = await axios.delete('http://localhost:3000/delete',{
+                data:{id}
+            })
+            alert("You want to delete")
+            console.log(res.data.message);
+            console.log('data is deleted')
+            getdata()
+        } catch (error) {
+            
+        }
+    }
+
     return (
         <div className='mt-10'>
             <div className='bg-white/10 backdrop-blur-lg border-b border-white/20 m-4 rounded-2xl'>
@@ -83,7 +101,7 @@ const Manger = () => {
                         className="bg-green-500 font-bold w-32 h-10 rounded-lg flex items-center justify-center text-white cursor-pointer hover:bg-green-600 hover:scale-105 transition-all duration-200"
                         onClick={save}
                     >
-                        + Save This
+                        +Save This
                     </button>
                 </div>
             </div>
@@ -99,8 +117,13 @@ const Manger = () => {
                         <p className='col-span-2 my-3 truncate px-3'>{item.website}</p>
                         <p className='col-span-1 my-3'>{item.username}</p>
                         <p className='col-span-1 my-3'>{item.password}</p>
-                        <div className='col-span-1'>
-
+                        <div className='col-span-1 flex gap-7 items-center'>
+                            <button className='justify-center items-center hover:cursor-pointer gap-7' onClick={() => Delete(item.id)}>
+                                <img src={bin} alt="" className='w-6 justify-center items-center scale-110 py-3 gap-7'/>
+                            </button>
+                            <button className='justify-center items-center hover:cursor-pointer'>
+                                <img src={edit} alt="" className='w-6 justify-center items-center scale-110 py-3'/>
+                            </button>
                         </div>
                     </div>
                 ))}
