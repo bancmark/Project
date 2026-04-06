@@ -5,6 +5,8 @@ import { v4 as uuidv4 } from 'uuid';
 import bin from "../assets/bin.png";
 import save from '../assets/bookmark_ani.gif';
 import edit from "../assets/pen.png"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Manger = () => {
@@ -12,6 +14,7 @@ const Manger = () => {
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
     const [passarray, setPassarray] = useState([])
+    const [EditID, setEditID] = useState(null)
 
     // getting all the data when website load
     useEffect(() => {
@@ -32,40 +35,59 @@ const Manger = () => {
         }
     }
 
-    //saving all data into server by sending them into backend
+    //saving all data into server by sending them into backend & also update data
     const save = async () => {
         try {
-            const res = await axios.post('http://localhost:3000/add', {
-                id: uuidv4(),
-                website,
-                username,
-                password
-            })
-            console.log(res.data)
+            if (EditID) {
+                // ✏️ UPDATE
+                const res = await axios.post('http://localhost:3000/update', {
+                    id: EditID,
+                    website,
+                    username,
+                    password
+                })
+            }
+            else {
+                // ➕ ADD
+                const res = await axios.post('http://localhost:3000/add', {
+                    id: uuidv4(),
+                    website,
+                    username,
+                    password
+                })
+            }
             // earsing old input value
             setPassword("")
             setUsername("")
             setWebsite("")
+            setEditID(null)
 
-            alert(res.data.message)
+            toast.success(EditID ? "Updated!" : "Saved!");
             getdata()
         } catch (error) {
             console.log(error)
         }
     }
 
-    const Delete = async (id)=>{
+    const Delete = async (id) => {
         try {
-            const res = await axios.delete('http://localhost:3000/delete',{
-                data:{id}
+            const res = await axios.delete('http://localhost:3000/delete', {
+                data: { id }
             })
             alert("You want to delete")
             console.log(res.data.message);
             console.log('data is deleted')
             getdata()
         } catch (error) {
-            
+
         }
+    }
+
+    const EditIteam = (item) => {
+        setWebsite(item.website)
+        setPassword(item.password)
+        setUsername(item.username)
+        setEditID(item.id)
     }
 
     return (
@@ -119,10 +141,10 @@ const Manger = () => {
                         <p className='col-span-1 my-3'>{item.password}</p>
                         <div className='col-span-1 flex gap-7 items-center'>
                             <button className='justify-center items-center hover:cursor-pointer gap-7' onClick={() => Delete(item.id)}>
-                                <img src={bin} alt="" className='w-6 justify-center items-center scale-110 py-3 gap-7'/>
+                                <img src={bin} alt="" className='w-6 justify-center items-center scale-110 py-3 gap-7' />
                             </button>
-                            <button className='justify-center items-center hover:cursor-pointer'>
-                                <img src={edit} alt="" className='w-6 justify-center items-center scale-110 py-3'/>
+                            <button className='justify-center items-center hover:cursor-pointer' onClick={() => EditIteam(item)}>
+                                <img src={edit} alt="" className='w-6 justify-center items-center scale-110 py-3' />
                             </button>
                         </div>
                     </div>

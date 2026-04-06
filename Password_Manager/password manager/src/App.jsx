@@ -2,12 +2,15 @@ import { useState } from 'react'
 import './App.css'
 import Navbar from './components/Navbar.jsx'
 import Manger from './components/Manger.jsx'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
+      {/* <ToastContainer /> */}
       <div className="relative h-screen w-full bg-slate-950 overflow-y-auto overflow-x-hidden">
         <div className="absolute bottom-0 left-[-20%] right-0 top-[-10%] h-[500px] w-[500px] rounded-full pointer-events-none bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))]"></div>
         <div className="absolute bottom-0 right-[-20%] top-[-10%] h-[500px] w-[500px] rounded-full pointer-events-none bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))]"></div>
