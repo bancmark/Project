@@ -2,7 +2,9 @@
 
 
 
-
+.nav_li{
+  @apply cursor-pointer hover:scale-110 transition-all duration-300 ease-in-out hover:underline transition transform hover:font-bold
+}
 
 
 /* @import "tailwindcss";
