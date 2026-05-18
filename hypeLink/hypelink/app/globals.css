@@ -3,7 +3,7 @@
 
 
 .nav_li{
-  @apply cursor-pointer hover:scale-110 transition-all duration-300 ease-in-out hover:underline transition transform hover:font-bold
+@apply mx-2 py-1 cursor-pointer hover:scale-110 transition-transform duration-300 ease-in-out hover:underline transform hover:text-zinc-200;
 }
 
 
