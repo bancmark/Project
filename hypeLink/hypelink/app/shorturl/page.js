@@ -11,7 +11,8 @@ const page = () => {
                     <input type="text" placeholder='Short URL' className='text-white  border rounded-2xl border-blue-700 w-full p-3 m-3' />
                 </div>
                 <div className='flex justify-center'>
-                    <button className='text-white hover:cursor-pointer  rounded-2xl border border-white p-4 px-6'>Enter</button>
+                    <button className='text-white hover:cursor-pointer hover:bg-purple-500 rounded-2xl border hover:border-transparent
+    hover:scale-105 border-white p-4 px-6 cursor-pointer'>Enter</button>
                 </div>
             </div>
         </>
