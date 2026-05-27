@@ -11,7 +11,7 @@ let cached = global.mongoose
 if (!cached) {
     cached = global.mongoose = {
         conn: null,
-        promise: nulll
+        promise: null
     }
 
 }
@@ -22,7 +22,7 @@ async function connection() {
     }
 
     if (!cached.promise) {
-        cached.promise = mongoose.connect(MONGODB_URI, {
+        cached.promise = mongoose.connect(Mongo_DB, {
             bufferCommands: false,
         }).then((mongoose) => {
             return mongoose
