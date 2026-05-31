@@ -5,11 +5,33 @@ import { useState } from 'react'
 const page = () => {
     const [url, setUrl] = useState("")
     const [shortUrl, setShortUrl] = useState("")
-    console.log(shortUrl, url);
+    // console.log(shortUrl, url);
 
     async function genrate(params) {
-        
-    } 
+        const myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+
+        const raw = JSON.stringify({
+            "url": url,
+            "shorturl": shortUrl
+        });
+
+        const requestOptions = {
+            method: "POST",
+            headers: myHeaders,
+            body: raw,
+            redirect: "follow"
+        };
+
+        fetch("http://localhost:3000/api/genrate", requestOptions)
+            .then((response) => response.text())
+            .then((result) => console.log(result))
+            .then(result=> {
+                setShortUrl("")
+                setUrl("")
+            })
+            .catch((error) => console.error(error));
+    }
     return (
         <>
             <div className='backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl shadow-lg m-4 h-70 my-10'>
