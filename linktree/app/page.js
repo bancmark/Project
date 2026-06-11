@@ -37,7 +37,20 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="bg-[#2665d6] min-h-[100vh]"></div>
+      <div className="bg-[#2665d6] min-h-[120vh] flex">
+        <div className="w-1/2 mt-20">
+            <video autoPlay muted loop className="w-full h-screen object-cover">
+              <source src="/customise_your_linktree.webm" type="video/webm"/>
+            </video>
+        </div>
+
+        <div className="w-1/2 mt-40 mr-20">
+          <h1 className="text-[#d2e823] text-7xl mb-9 font-black">Create and customize your Linktree in minutes</h1>
+          <p className="mt-3 font-semibold mb-6">Connect all your content across social media, websites, stores and more in one link in bio. Customize every detail or let Linktree automatically enhance it to match your brand and drive more clicks.</p>
+          <button className="bg-[#d2e823] text-black font-semibold mt-3 hover:mt-2.5 p-5 px-20 rounded-full hover:cursor-pointer">Get started for free</button>
+        </div>
+      </div>
+
       <div className="bg-[#780016] min-h-[100vh]"></div>
       <div className="bg-[#e8efd6] min-h-[100vh]"></div>
       <div className="bg-[#f3f3f1] min-h-[150vh]"></div>
