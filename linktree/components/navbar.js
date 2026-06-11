@@ -1,13 +1,36 @@
+"use client"
 import React from 'react'
 import Image from "next/image";
+import { useState, useEffect } from 'react'
 import Logo from "@/public/66634daccb34e6d65a41c76d_download.svg"
 
 const Navbar = () => {
+    const [visible, setVisible] = useState(true)
+    const [lastScrollY, setLastScrollY] = useState(0)
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollY = window.scrollY
+
+            if (currentScrollY < 10) {
+                setVisible(true)                          // always show at top
+            } else if (currentScrollY > lastScrollY) {
+                setVisible(false)                         // scrolling down → hide
+            } else {
+                setVisible(true)                          // scrolling up → show
+            }
+
+            setLastScrollY(currentScrollY)
+        }
+
+        window.addEventListener('scroll', handleScroll, { passive: true })
+        return () => window.removeEventListener('scroll', handleScroll)
+    }, [lastScrollY])
     const menueItem = 'hover:bg-[#eff0ec] p-3 hover:cursor-pointer rounded-2xl'
     return (
-        <div className='fixed top-6 left-0 right-0 z-50 flex justify-center'>
+        <div className={`fixed top-6 left-0 right-0 z-50 flex justify-center transition-transform duration-300 ease-in-out ${visible ? 'translate-y-0' : '-translate-y-[120%]'}`}>
             <div className='bg-white flex px-6 py-3 rounded-full gap-10'>
-                <Image src={Logo} alt="Logo" width={100} height={50} />
+                <Image src={Logo} alt="Logo" width={100} height={50} className='hover:cursor-pointer' />
                 <ul className='flex text-black items-center justify-center'>
                     <li className={menueItem}>Product</li>
                     <li className={menueItem}>Template</li>
