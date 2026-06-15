@@ -39,9 +39,9 @@ export default function Home() {
 
       <div className="bg-[#2665d6] min-h-[120vh] flex">
         <div className="w-1/2 mt-20">
-            <video autoPlay muted loop className="w-full h-screen object-cover">
-              <source src="/customise_your_linktree.webm" type="video/webm"/>
-            </video>
+          <video autoPlay muted loop className="w-full h-screen object-cover">
+            <source src="/customise_your_linktree.webm" type="video/webm" />
+          </video>
         </div>
 
         <div className="w-1/2 mt-40 mr-20">
@@ -51,7 +51,18 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="bg-[#780016] min-h-[100vh]"></div>
+      <div className="bg-[#780016] min-h-[120vh] flex">
+        <div className="w-1/2 ml-17">
+          <div className="mt-52  p-0">
+              <h1 className="text-[#e9c0e9] text-6xl font-black">Share your linktree anywhere you like!</h1>
+              <p className="font-semibold mt-10 text-lg">Add your unique Linktree URL to all the platforms and places you find your audience. Then use your QR code to drive your offline traffic back to your link in bio.</p>
+          </div>
+          <div>
+            <button className="bg-[#e9c0e9] p-4 mt-9 px-15 text-black rounded-full font-bold hover:cursor-pointer hover:mt-8.5">Get started for free</button>
+          </div>
+        </div>
+        <div className="w-1/2"></div>
+      </div>
       <div className="bg-[#e8efd6] min-h-[100vh]"></div>
       <div className="bg-[#f3f3f1] min-h-[150vh]"></div>
       <div className="bg-[#780016] min-h-[100vh]"></div>
