@@ -3,6 +3,7 @@ import img1 from '@/public/img1.webp'
 import img2 from '@/public/img2.webp'
 import img3 from '@/public/img3.webp'
 import img4 from '@/public/img4.webp'
+import analyze from '@/public/analyze.avif'
 import "./globals.css"
 import { Volkhov } from "next/font/google";
 
@@ -54,8 +55,8 @@ export default function Home() {
       <div className="bg-[#780016] min-h-[120vh] flex">
         <div className="w-1/2 ml-17">
           <div className="mt-52  p-0">
-              <h1 className="text-[#e9c0e9] text-6xl font-black">Share your linktree anywhere you like!</h1>
-              <p className="font-semibold mt-10 text-lg">Add your unique Linktree URL to all the platforms and places you find your audience. Then use your QR code to drive your offline traffic back to your link in bio.</p>
+            <h1 className="text-[#e9c0e9] text-6xl font-black">Share your linktree anywhere you like!</h1>
+            <p className="font-semibold mt-10 text-lg">Add your unique Linktree URL to all the platforms and places you find your audience. Then use your QR code to drive your offline traffic back to your link in bio.</p>
           </div>
           <div>
             <button className="bg-[#e9c0e9] p-4 mt-9 px-15 text-black rounded-full font-bold hover:cursor-pointer hover:mt-8.5">Get started for free</button>
@@ -63,7 +64,26 @@ export default function Home() {
         </div>
         <div className="w-1/2"></div>
       </div>
-      <div className="bg-[#e8efd6] min-h-[100vh]"></div>
+
+      <div className="bg-[#e8efd6] min-h-[110vh] flex">
+        <div className="w-1/2">
+          <Image
+            src={analyze}
+            alt="Analysis image"
+            width={700}
+            height={700}
+          />
+        </div>
+        <div className="w-1/2 mt-30 m-6">
+          <div>
+            <h1 className="font-black text-7xl text-black">Analyze your audience and keep them engaged</h1>
+            <p className="text-black text-xl mt-5">Track your engagement over time, monitor revenue and learn what’s converting your audience. Make informed updates on the fly to keep them coming back.</p>
+          </div>
+          <div>
+            <button className="px-15 p-4 bg-[#e9c0e9] text-black font-semibold rounded-full mt-6 hover:cursor-pointer hover:mt-5.5 hover:bg-[#e9c0e9ef]">Get statred for free</button>
+          </div>
+        </div>
+      </div>
       <div className="bg-[#f3f3f1] min-h-[150vh]"></div>
       <div className="bg-[#780016] min-h-[100vh]"></div>
       <div className="bg-[#502274] min-h-[100vh]"></div>
