@@ -5,6 +5,7 @@ import img3 from '@/public/img3.webp'
 import img4 from '@/public/img4.webp'
 import analyze from '@/public/analyze.avif'
 import "./globals.css"
+import Link from "next/link";
 import { Volkhov } from "next/font/google";
 
 export default function Home() {

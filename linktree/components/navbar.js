@@ -2,6 +2,7 @@
 import React from 'react'
 import Image from "next/image";
 import { useState, useEffect } from 'react'
+import Link from "next/link";
 import Logo from "@/public/66634daccb34e6d65a41c76d_download.svg"
 
 const Navbar = () => {
@@ -39,8 +40,10 @@ const Navbar = () => {
                     <li className={menueItem}>Pricing</li>
                 </ul>
                 <div className='gap-4 ml-80 flex'>
-                    <button className='bg-gray-100 text-black py-4 px-5 hover:cursor-pointer rounded-2xl hover:bg-[#e9e9e9]'>Log in</button>
-                    <button className='bg-[#1e2330] text-white p-4 rounded-full hover:cursor-pointer hover:bg-[#262d3e]'>Sign up free</button>
+                    <Link href="/login" >
+                        <button className='bg-gray-100 text-black py-4 px-5 hover:cursor-pointer rounded-2xl hover:bg-[#e9e9e9]'>Log in</button>
+                        <button className='bg-[#1e2330] text-white p-4 rounded-full hover:cursor-pointer hover:bg-[#262d3e]'>Sign up free</button>
+                    </Link>
                 </div>
             </div>
         </div>
