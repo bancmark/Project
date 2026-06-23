@@ -4,7 +4,6 @@ import React from 'react'
 import Image from "next/image";
 import { signIn } from "next-auth/react" 
 import banner from '@/public/banner.webp'
-import LoginButtons from "./loginButton.jsx";
 
 const Login = () => {
     return (
