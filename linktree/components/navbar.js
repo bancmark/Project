@@ -4,10 +4,19 @@ import Image from "next/image";
 import { useState, useEffect } from 'react'
 import Link from "next/link";
 import Logo from "@/public/66634daccb34e6d65a41c76d_download.svg"
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
+    const pathname = usePathname();
     const [visible, setVisible] = useState(true)
     const [lastScrollY, setLastScrollY] = useState(0)
+
+    if (
+        pathname.startsWith("/login") ||
+        pathname.startsWith("/dashboard")
+    ) {
+        return null;
+    }
 
     useEffect(() => {
         const handleScroll = () => {
@@ -40,7 +49,7 @@ const Navbar = () => {
                     <li className={menueItem}>Pricing</li>
                 </ul>
                 <div className='gap-4 ml-80 flex'>
-                    <Link href="/login" >
+                    <Link href="/login" className='gap-4'>
                         <button className='bg-gray-100 text-black py-4 px-5 hover:cursor-pointer rounded-2xl hover:bg-[#e9e9e9]'>Log in</button>
                         <button className='bg-[#1e2330] text-white p-4 rounded-full hover:cursor-pointer hover:bg-[#262d3e]'>Sign up free</button>
                     </Link>

@@ -7,5 +7,11 @@ export default async function Dashboard() {
 
     if (!session) redirect("/")
 
-    return <h1>Welcome, {session.user?.name}</h1>
+    return(
+        <div className="bg-white">
+            <div></div>
+            <div></div>
+            <h1>Welcome, {session.user?.name}</h1>
+        </div>
+    )
 }
